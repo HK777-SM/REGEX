@@ -1,0 +1,61 @@
+🔹 Regex Cheat Sheet
+1. Basics
+
+Symbol	Meaning
+.	Any character except newline
+\	Escape special character (e.g., \. matches .)
+^	Start of string/line
+$	End of string/line
+|	OR (e.g., cat|dog)
+
+2. Character Classes
+
+Pattern	Meaning
+[abc]	Match a, b, or c
+[^abc]	NOT a, b, or c
+[a-z]	Range (lowercase letters)
+[A-Z]	Range (uppercase letters)
+[0-9]	Digits
+\d	Digit (same as [0-9])
+\D	Not a digit
+\w	Word character [A-Za-z0-9_]
+\W	Not a word character
+\s	Whitespace (space, tab, newline)
+\S	Not whitespace
+
+3. Quantifiers
+
+Pattern	Meaning
+*	0 or more
++	1 or more
+?	0 or 1 (optional)
+{n}	Exactly n
+{n,}	n or more
+{n,m}	Between n and m
+
+4. Groups & Anchors
+
+Pattern	Meaning
+(abc)	Capturing group
+(?:abc)	Non-capturing group
+(?<name>abc)	Named capturing group
+\1	Backreference to group 1
+\b	Word boundary
+\B	Not a word boundary
+
+5. Assertions
+
+Pattern	Meaning
+(?=...)	Positive lookahead (must be followed by …)
+(?!...)	Negative lookahead (must NOT be followed by …)
+(?<=...)	Positive lookbehind (must be preceded by …)
+(?<!...)	Negative lookbehind
+
+6. Common Examples
+
+Regex	Matches
+\d{3}-\d{2}-\d{4}	SSN format: 123-45-6789
+\(\d{3}\) \d{3}-\d{4}	Phone number (123) 456-7890
+[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}	Email
+https?://[^\s/$.?#].[^\s]*	URL
+^[A-Z][a-z]+$	Capitalized word
